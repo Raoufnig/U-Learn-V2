@@ -22,6 +22,7 @@ import { NavComponent } from './nav/nav.component';
 import { NavBlackComponent } from './nav-black/nav-black.component';
 import { ListeFormationComponent } from './liste-formation/liste-formation.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
     NavComponent,
     NavBlackComponent,
     ListeFormationComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

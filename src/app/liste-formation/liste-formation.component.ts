@@ -16,7 +16,7 @@ export class ListeFormationComponent implements OnInit {
   items:any;
   formation:any;
   ngOnInit(): void {
-    const a=localStorage.getItem('categorie');
+    const a=localStorage.getItem('categories');
     // @ts-ignore
     this.categorie=JSON.parse(a);
     this.getCategories();
@@ -26,10 +26,8 @@ export class ListeFormationComponent implements OnInit {
       .subscribe(
         items => {
           this.items=items;
-          this.formation=this.items.results;
-          console.log(this.formation);
           // @ts-ignore
-          this.Tformation=this.formation.filter((item => item.category === this.categorie.id));
+          this.Tformation=this.items.filter((item) => item.category == this.categorie.id);
           console.log(this.Tformation);
         }
       );

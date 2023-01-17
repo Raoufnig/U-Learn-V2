@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Training } from '../models/training';
 import { CategoriesService } from '../_services/categories.service';
 import { TrainingService } from '../_services/training.service';
-
+import { TokenStorageService } from '../_services/token-storage.service';
 @Component({
   selector: 'app-acceuil',
   templateUrl: './acceuil.component.html',
@@ -11,7 +11,7 @@ import { TrainingService } from '../_services/training.service';
 })
 export class AcceuilComponent implements OnInit {
   loaded!: boolean;
-  constructor( private categorieservice:CategoriesService, private trainingservice : TrainingService,private router:Router) { }
+  constructor( private categorieservice:CategoriesService, private trainingservice : TrainingService,private router:Router, private tokenStorage: TokenStorageService) { }
   items!:any;
   trainings:any;
   Ttrainings:Array<any>=new Array<any>();
@@ -32,8 +32,8 @@ export class AcceuilComponent implements OnInit {
     this.trainingservice.getTraining('http://127.0.0.1:8000/api/training/')
       .subscribe(
         items => {
-          this.trainings=items;
-          this.formations=this.trainings.results;
+  
+          this.formations=items;
           console.log(this.formations)
           // this.result.push(this.trainings.results);
           // this.Ttrainings.push(this.trainings);
