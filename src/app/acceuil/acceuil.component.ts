@@ -42,7 +42,8 @@ export class AcceuilComponent implements OnInit {
       )
   }
 
-  toPage(obj:any){
+  toDetail(obj:any){
+    localStorage.removeItem('formation');
     localStorage.setItem('formation',JSON.stringify(obj));
     this.router.navigate(['/detail-formation']);
 

@@ -12,13 +12,14 @@ export class ListeFormationComponent implements OnInit {
 
   constructor(private categorieservice: CategoriesService,private router:Router) { }
   Tformation:any;
-  categorie= new Categories();
+  categorie:any;
   items:any;
   formation:any;
   ngOnInit(): void {
     const a=localStorage.getItem('categories');
     // @ts-ignore
     this.categorie=JSON.parse(a);
+    console.log(this.categorie)
     this.getCategories();
   }
   getCategories(){
@@ -32,10 +33,9 @@ export class ListeFormationComponent implements OnInit {
         }
       );
   }
-  toPage(obj:any){
+  toDetail(obj:any){
+    localStorage.removeItem('formation');
     localStorage.setItem('formation',JSON.stringify(obj));
-    this.router.navigate(['/detail-formation']);
-
   }
 
 }

@@ -106,14 +106,14 @@
             <div class="course-box">
               <div class="image-wrap entry">
                 <img [src]="formation.image_url" alt="" class="img-responsive">
-                <div class="magnifier">
+                <!-- <div class="magnifier">
                   <a [routerLink]="['/detail-formation',formation.name]" (click)="toPage(formation)" title=""></a>
-                </div>
+                </div> -->
               </div><!-- end image-wrap -->
               <div class="course-details">
                 <h4>
                   <small></small><small style="color:#b2dba1">{{formation.status}}</small>
-                  <a (click)="toPage(formation)" title="" style="cursor:pointer;">{{formation.name}}</a>
+                  <a (click)="toDetail(formation)" title="" style="cursor:pointer;">{{formation.name}}</a>
                 </h4>
                 <p>{{formation.description}}</p>
               </div><!-- end details -->

@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="tagline-message page-title text-center">
-              <h3>{{categorie.name}}</h3>
+              <h3>yooo</h3>
               <ul class="breadcrumb">
                 <li><a href="javascript:void(0)">U-learn</a></li>
                 <li class="active">Shop</li>
@@ -43,7 +43,7 @@
           <div class="shop-top">
             <div class="clearfix">
               <div class="pull-left">
-                <p> Showing 1–9 of 11 results</p>
+                <h3> {{categorie.name}}</h3>
               </div>
               <div class="pull-right">
                 <select class="selectpicker">
@@ -65,7 +65,7 @@
                 <!-- end image-wrap -->
                 <div class="course-details shop-box text-center">
                   <h4>
-                    <a href="#" title="">{{formation.name}}</a>
+                    <a href="/detail-formation" (click)="toDetail(formation)" title="">{{formation.name}}</a>
                     <small>{{categorie.name}}</small>
                   </h4>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="course-footer clearfix">
                   <div class="pull-left">
                     <ul class="list-inline">
-                      <li><a (click)="toPage(formation)"><i class="fa fa-shopping-basket"></i> Add Cart</a></li>
+                      <li><a hef="#"><i class="fa fa-shopping-basket"></i> Add Cart</a></li>
                     </ul>
                   </div><!-- end left -->
   

@@ -8,7 +8,7 @@ const USER_KEY = 'auth-user';
 })
 export class TokenStorageService {
   constructor() { }
-    user:any;
+    user!:any;
   signOut(): void {
     window.sessionStorage.clear();
   }
@@ -28,9 +28,14 @@ export class TokenStorageService {
   }
   public saveinfo(data:any){
       this.user=data;
+      localStorage.removeItem('user');
+      localStorage.setItem('user', JSON.stringify(this.user))
+      return this.user;
   }
   public getinfo(){
-    return this.user;
+   this.user=JSON.parse(localStorage.getItem('user') || '{}');
+   console.log(this.user);
+   return this.user;
   }
   public getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);

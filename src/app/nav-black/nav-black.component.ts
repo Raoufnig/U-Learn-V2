@@ -30,8 +30,9 @@ export class NavBlackComponent implements OnInit {
       );
   }
   toPage(obj:any){
-    localStorage.setItem('categorie',JSON.stringify(obj));
-    this.router.navigate(['liste-formation-white/',JSON.stringify(obj.id)]);
+    localStorage.removeItem("categories");
+    localStorage.setItem("categories", JSON.stringify(obj));
+  //  this.router.navigate(['liste-formation/',obj.id]);
   }
   logout(){
     this.sessionStorage.signOut();

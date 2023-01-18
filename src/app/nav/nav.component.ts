@@ -30,8 +30,9 @@ export class NavComponent implements OnInit {
       );
   }
   toPage(obj:any){
+    localStorage.removeItem("categories");
     localStorage.setItem("categories", JSON.stringify(obj));
-    this.router.navigate(['liste-formation/',obj.id])
+    // this.router.navigate(['liste-formation/',obj.id])
   }
   logout(){
     this.sessionStorage.signOut();
